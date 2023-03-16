@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+}
+
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.container .container-dados {
+    display: grid;
+}
+
+.input-dados {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 3px;
+    height: 40px;
+    font-size: 0.8em;
+}
+
+.label-dados {
+    font-size: 17px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.titulo {
+    display: flex;
+}
+
+.text-title {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.botao-add {
+    width: 90px;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 35px;
+    margin-left: 20px;
+    cursor: pointer;
+}
