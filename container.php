@@ -16,30 +16,34 @@
         <h1 class="titulo">Container</h1>
     </div>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">iDContainer</th>
+      <th scope="col">Numero Container</th>
+      <th scope="col">Cliente</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Status</th>
+      <th scope="col">Categoria</th>
     </tr>
   </thead>
   <tbody>
+    <?php
+    while ($container = $query_container->fetch_assoc()) {?>
+        <td><?php echo $container['idContainer']?></td>
+        <td><?php echo $container['nm_conteiner']?></td>
+        <td><?php echo $container['nm_cliente']?></td>
+        <td><?php echo $container['tipo']?></td>
+        <td><?php echo $container['status']?></td>
+        <td><?php echo $container['categoria']?></td>
+        <td>
+            <button><a href="editar_container.php">Editar</a></button>
+            <button><a href="excluir_container.php">Excluir</a></button>
+        </td>
+        <?php
+    }?>
+
+  
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+
   </tbody>
 </table>
     
