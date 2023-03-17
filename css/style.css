@@ -20,15 +20,14 @@ body {
     font-size: 0.8em;
 }
 
+
 .label-dados {
     font-size: 17px;
     margin-top: 30px;
     margin-left: 20px;
 }
 
-.titulo {
-    display: flex;
-}
+
 
 .text-title {
     margin-left: auto;
@@ -38,7 +37,7 @@ body {
 .botao-add {
     width: 90px;
     height: 40px;
-    border-radius: 20px;
+    border-radius: 5px;
     margin-top: 35px;
     margin-left: 20px;
     cursor: pointer;
