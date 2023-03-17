@@ -20,14 +20,15 @@ body {
     font-size: 0.8em;
 }
 
-
 .label-dados {
     font-size: 17px;
     margin-top: 30px;
     margin-left: 20px;
 }
 
-
+.titulo {
+    display: flex;
+}
 
 .text-title {
     margin-left: auto;
