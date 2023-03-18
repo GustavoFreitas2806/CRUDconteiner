@@ -1,78 +1,78 @@
 <?php
 session_start();
-require 'dbcon.php';
+require 'conexao.php';
 
-if(isset($_POST['delete_student']))
+if(isset($_POST['delete_conteiner']))
 {
-    $student_id = mysqli_real_escape_string($con, $_POST['delete_student']);
+    $conteiner_id = mysqli_real_escape_string($con, $_POST['delete_conteiner']);
 
-    $query = "DELETE FROM students WHERE id='$student_id' ";
+    $query = "DELETE FROM container WHERE idContainer='$conteiner_id' ";
     $query_run = mysqli_query($con, $query);
 
     if($query_run)
     {
-        $_SESSION['message'] = "Aluno excluido com sucesso";
+        $_SESSION['message'] = "Conteiner excluido com sucesso";
         header("Location: index.php");
         exit(0);
     }
     else
     {
-        $_SESSION['message'] = "Não foi possivel excluir o aluno";
+        $_SESSION['message'] = "Não foi possivel excluir o Conteiner";
         header("Location: index.php");
         exit(0);
     }
 }
 
-if(isset($_POST['update_student']))
-{
-    $student_id = mysqli_real_escape_string($con, $_POST['student_id']);
+if(isset($_POST['update_conteiner']))
+{   
+    $conteiner_id = mysqli_real_escape_string($con, $_POST['idContainer']);
 
-    $name = mysqli_real_escape_string($con, $_POST['name']);
-    $email = mysqli_real_escape_string($con, $_POST['email']);
-    $phone = mysqli_real_escape_string($con, $_POST['phone']);
-    $course = mysqli_real_escape_string($con, $_POST['course']);
+    $nm_conteiner = mysqli_real_escape_string($con, $_POST['nm_conteiner']);
+    $nm_cliente = mysqli_real_escape_string($con, $_POST['nm_cliente']);
+    $tipo = mysqli_real_escape_string($con, $_POST['tipo']);
+    $status = mysqli_real_escape_string($con, $_POST['status']);
+    $categoria = mysqli_real_escape_string($con, $_POST['categoria']);
 
-    $query = "UPDATE students SET name='$name', email='$email', phone='$phone', course='$course' WHERE id='$student_id' ";
+
+    $query = "UPDATE container SET nm_conteiner='$nm_conteiner', nm_cliente='$nm_cliente', tipo='$tipo', status='$status', categoria='$categoria' WHERE idContainer='$conteiner_id' ";
     $query_run = mysqli_query($con, $query);
 
     if($query_run)
     {
-        $_SESSION['message'] = "Aluno atualizado com sucesso";
+        $_SESSION['message'] = "Conteiner atualizado com sucesso";
         header("Location: index.php");
         exit(0);
     }
     else
     {
-        $_SESSION['message'] = "Aluno não atualizado";
+        $_SESSION['message'] = "Conteiner não atualizado";
         header("Location: index.php");
         exit(0);
     }
 
 }
-
 
 if(isset($_POST['save_conteiner']))
 {
-    $name = mysqli_real_escape_string($con, $_POST['name']);
-    $email = mysqli_real_escape_string($con, $_POST['email']);
-    $phone = mysqli_real_escape_string($con, $_POST['phone']);
-    $course = mysqli_real_escape_string($con, $_POST['course']);
+    $nm_conteiner = mysqli_real_escape_string($con, $_POST['nm_conteiner']);
+    $nm_cliente = mysqli_real_escape_string($con, $_POST['nm_cliente']);
+    $tipo = mysqli_real_escape_string($con, $_POST['tipo']);
+    $status = mysqli_real_escape_string($con, $_POST['status']);
+    $categoria = mysqli_real_escape_string($con, $_POST['categoria']);
 
-    $query = "INSERT INTO students (name,email,phone,course) VALUES ('$name','$email','$phone','$course')";
+    $query = "INSERT INTO container (`nm_conteiner`, `nm_cliente`, `tipo`, `status`, `categoria`) VALUES ('$nm_conteiner','$nm_cliente','$tipo','$status','$categoria')";
 
     $query_run = mysqli_query($con, $query);
     if($query_run)
     {
-        $_SESSION['message'] = "Aluno cadastrado com sucesso!";
-        header("Location: student-create.php");
+        $_SESSION['message'] = "Conteiner cadastrado com sucesso!";
+        header("Location: index.php");
         exit(0);
     }
     else
     {
-        $_SESSION['message'] = "Aluno não cadastrado";
-        header("Location: student-create.php");
+        $_SESSION['message'] = "Conteiner não cadastrado";
+        header("Location: index.php");
         exit(0);
     }
 }
-
-?>

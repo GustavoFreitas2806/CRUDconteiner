@@ -34,16 +34,20 @@ session_start();
                         <form action="code.php" method="POST">
 
                             <div class="mb-3">
-                                <label>Nome</label>
+                                <label>Número Container</label>
                                 <input type="text" name="nm_conteiner" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label>Cliente</label>
-                                <input type="email" name="nm_cliente" class="form-control">
+                                <input type="text" name="nm_cliente" class="form-control">
                             </div>
                             <div class="mb-3">
-                                <label>tipo</label>
-                                <input type="text" name="tipo" class="form-control">
+                                <!-- O segundo valor estará selecionado inicialmente -->
+                                <select name="tipo">
+                                    <option value="padrao" selected>Selecionar</option>
+                                    <option value="20">20</option>
+                                    <option value="40">40</option>
+                                </select>
                             </div>
                             <div class="mb-3">
                                 <label>Status</label>

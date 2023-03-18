@@ -26,7 +26,7 @@ require 'conexao.php';
                 <div class="card">
                     <div class="card-header">
                         <h4>Editar aluno 
-                            <a href="teste.php" class="btn btn-danger float-end">VOLTAR</a>
+                            <a href="index.php" class="btn btn-danger float-end">VOLTAR</a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -70,8 +70,8 @@ require 'conexao.php';
                                         <input type="text" name="categoria" value="<?=$conteiner['categoria'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
-                                        <button type="submit" name="update_student" class="btn btn-primary">
-                                            Atualizar Aluno
+                                        <button type="submit" name="update_conteiner" class="btn btn-primary">
+                                            Atualizar conteiner
                                         </button>
                                     </div>
 
