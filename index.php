@@ -19,7 +19,6 @@ require 'conexao.php';
 <body>
 
     <div class="container mt-4">
-
         <?php include('message.php'); ?>
 
         <div class="row">

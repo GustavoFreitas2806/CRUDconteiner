@@ -1,4 +1,5 @@
 <?php
+    //se não estiver vázio, apresenta mensagem 
     if(isset($_SESSION['message'])) :
 ?>
 
@@ -8,6 +9,7 @@
     </div>
 
 <?php 
+    //limpa variável, para não deixar armazenada para não conflitar com as próximas ações.
     unset($_SESSION['message']);
     endif;
 ?>

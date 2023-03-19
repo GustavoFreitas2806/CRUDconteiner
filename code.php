@@ -5,7 +5,7 @@ require 'conexao.php';
 if(isset($_POST['delete_conteiner']))
 {
     $conteiner_id = mysqli_real_escape_string($con, $_POST['delete_conteiner']);
-
+    
     $query = "DELETE FROM container WHERE idContainer='$conteiner_id' ";
     $query_run = mysqli_query($con, $query);
 
@@ -25,6 +25,8 @@ if(isset($_POST['delete_conteiner']))
 
 if(isset($_POST['update_conteiner']))
 {   
+
+    //pesquisar sobre função    
     $conteiner_id = mysqli_real_escape_string($con, $_POST['idContainer']);
 
     $nm_conteiner = mysqli_real_escape_string($con, $_POST['nm_conteiner']);
@@ -37,10 +39,15 @@ if(isset($_POST['update_conteiner']))
     $query = "UPDATE container SET nm_conteiner='$nm_conteiner', nm_cliente='$nm_cliente', tipo='$tipo', status='$status', categoria='$categoria' WHERE idContainer='$conteiner_id' ";
     $query_run = mysqli_query($con, $query);
 
+//Caso $query_run (mysqli_query) seja true, a váriavel $_SESSION['MESSAGE'] recebe uma frase dizendo que o conteiner foi atualizado, 
+//caso seja false, ela recebe a frase dizendo que o conteiner não foi atualizado.
     if($query_run)
     {
         $_SESSION['message'] = "Conteiner atualizado com sucesso";
+        //função rediriciona para index.php
         header("Location: index.php");
+
+        //fim da função do script (mysql)
         exit(0);
     }
     else
@@ -54,6 +61,8 @@ if(isset($_POST['update_conteiner']))
 
 if(isset($_POST['save_conteiner']))
 {
+    //mysqli_real_escape_string é usada para verificar caracteres especiais em uma string, tornando-a segura para ser usada em consultas SQL
+    
     $nm_conteiner = mysqli_real_escape_string($con, $_POST['nm_conteiner']);
     $nm_cliente = mysqli_real_escape_string($con, $_POST['nm_cliente']);
     $tipo = mysqli_real_escape_string($con, $_POST['tipo']);
