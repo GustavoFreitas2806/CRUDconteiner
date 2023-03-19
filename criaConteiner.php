@@ -43,8 +43,12 @@ session_start();
                             </div>
                             <div class="mb-3">
                                 <!-- O segundo valor estará selecionado inicialmente -->
+                                <label>Tipo</label><br>
                                 <select name="tipo">
-                                    <option value="padrao" selected>Selecionar</option>
+                                    <!-- 
+                                        TRATAR FAZER VERIFICAÇÃO PARA NAO ENVIAR O VALOR SELECTED "selecionar"
+                                        <option selected>Selecionar</option> 
+                                    -->
                                     <option value="20">20</option>
                                     <option value="40">40</option>
                                 </select>

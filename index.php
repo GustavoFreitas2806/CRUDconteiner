@@ -1,5 +1,8 @@
 <?php
+// iniciar sessão _SESSION 
 session_start();
+
+// requer página da conexão, importantando as informação dela. Caso nao exista a página não funciona.
 require 'conexao.php';
 ?>
 <!doctype html>
@@ -19,6 +22,7 @@ require 'conexao.php';
 <body>
 
     <div class="container mt-4">
+        <!-- importa as informações do arquivo, apresentando uma mensagem de AVISO -->
         <?php include('message.php'); ?>
 
         <div class="row">
@@ -48,7 +52,10 @@ require 'conexao.php';
                                 $query = "SELECT * FROM container";
                                 $query_run = mysqli_query($con, $query);
 
+
+                         //pega todas as informações dos container no vacuo 
                                 if (mysqli_num_rows($query_run) > 0) {
+                         //atribuir as informação do select ao array container 
                                     foreach ($query_run as $container) {
                                 ?>
                                         <tr>

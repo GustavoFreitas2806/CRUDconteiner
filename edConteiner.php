@@ -38,8 +38,10 @@ require 'conexao.php';
                             $query = "SELECT * FROM container WHERE idContainer='$conteiner_id' ";
                             $query_run = mysqli_query($con, $query);
             
+                            //uma função que retorna o número de linhas do select (count())
                             if(mysqli_num_rows($query_run) > 0)
                             {
+                                //atualizar a variável com a informação que vem no select
                                 $conteiner = mysqli_fetch_array($query_run);
                                 ?>
                                 <form action="code.php" method="POST">
